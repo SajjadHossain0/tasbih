@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasbih Counter</title>
+    <style>
+        /* Google Font for Arabic Calligraphy Style */
+        @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+
+        /* General Page Styling */
+        body {
+            text-align: center;
+            font-family: 'Scheherazade New', serif;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Subtle Texture */
+            background-color: #f5e3c3; /* Light Beige */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tasbih Counter Container */
+        .tasbih-container {
+            width: 90%;
+            max-width: 400px;
+            background: radial-gradient(circle, #c19a6b, #8b5a2b); /* Wooden Tasbih Color */
+            border-radius: 50%;
+            padding: 30px;
+            margin: 50px auto;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            position: relative;
+            border: 5px solid gold; /* Golden Islamic Frame */
+        }
+
+        /* Counter Display (Round Shape Like Tasbih Counter) */
+        .counter-display {
+            font-size: 40px;
+            font-weight: bold;
+            padding: 20px;
+            background: gold;
+            color: #4b3621;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Increment Button - Resembling a Tasbih Bead */
+        .count-btn {
+            width: 140px;
+            height: 140px;
+            font-size: 28px;
+            font-weight: bold;
+            background: radial-gradient(circle, #d2a679, #8b5a2b);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .count-btn:hover {
+            background: radial-gradient(circle, #e6b98a, #9c6b3f);
+        }
+
+        /* Reset Button */
+        .reset-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: white;
+            color: #8b5a2b;
+            border: 2px solid gold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .reset-btn:hover {
+            background: gold;
+            color: white;
+        }
+
+        /* Islamic Calligraphy Above Counter */
+        .bismillah {
+            font-size: 24px;
+            font-weight: bold;
+            color: gold;
+            margin-bottom: 15px;
+        }
+
+        /* Mosque Silhouette Below */
+        .mosque {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tasbih-container">
+        <div class="bismillah">بِسْمِ ٱللَّٰهِ الرَّحْمَٰنِ الرَّحِيمِ</div> <!-- Bismillah -->
+        <div class="counter-display" id="counter">00000</div>
+        <br>
+        <button class="count-btn" onclick="incrementCounter()">➕</button>
+        <br>
+        <button class="reset-btn" onclick="resetCounter()">Reset</button>
+    </div>
+
+    <img src="https://cdn.pixabay.com/photo/2016/06/18/21/48/mosque-1462946_1280.png" class="mosque" alt="Islamic Mosque Illustration">
+
+    <script>
+        let count = 0;
+
+        function incrementCounter() {
+            count++;
+            document.getElementById("counter").innerText = count.toString().padStart(5, '0');
+        }
+
+        function resetCounter() {
+            count = 0;
+            document.getElementById("counter").innerText = "00000";
+        }
+    </script>
+
+</body>
+</html>
